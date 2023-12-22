@@ -2,52 +2,49 @@ import java.util.*;
 
 public class FourSum {
 
-    public static void main(String[] args) {
-        // int[] arr = { 1, 0, -1, 0, -2, 2 };
-        int[] arr = { 0, 0, 0, 0 };
-        List<List<Integer>> nestedList = new ArrayList<>();
+    public static List<List<Integer>> fourSum(int[] nums, int target) {
+        List<List<Integer>> ans = new ArrayList<>();
+        HashSet<String> unique = new HashSet<>();
 
-        HashMap<List<Integer>, Integer> hm = new HashMap<>();
+        for (int i = 0; i < nums.length - 3; i++) {
+            for (int j = i + 1; j < nums.length - 2; j++) {
+                int left = j + 1;
+                int right = nums.length - 1;
+                while (left <= right) {
+                    long sum = nums[i];
+                    sum += nums[j];
+                    sum += nums[left];
+                    sum += nums[right];
 
-        int target = 0;
-        Arrays.sort(arr);
-
-        int n = arr.length;
-        for (int i = 0; i < n - 4; i++) {
-            for (int j = i + 1; j < n - 3; j++) {
-
-                int left = j + 1, right = arr.length - 1;
-                while (left < right) {
-                    int sum = arr[i] + arr[j] + arr[left] + arr[right];
-                    if (sum == target) {
-
-                        List<Integer> temp = new ArrayList<>();
-                        temp.add(arr[i]);
-                        temp.add(arr[j]);
-                        temp.add(arr[left]);
-                        temp.add(arr[right]);
-
-                        if (!hm.containsKey(temp)) {
-                            hm.put(temp, 1);
-                        } else {
-                            hm.put(temp, hm.get(temp) + 1);
-                        }
-
-                    }
-                    if (sum > target)
+                    if (sum > target) {
                         right--;
-                    else
+                    } else if (sum < target) {
                         left++;
+                    } else {
+                        StringBuilder sb = new StringBuilder();
+                        sb.append(nums[i]);
+                        sb.append(nums[j]);
+                        sb.append(nums[left]);
+                        sb.append(nums[right]);
+                        String code = sb.toString();
+                        if (unique.contains(code) == false) {
+                            unique.add(code);
+                            ans.add(Arrays.asList(nums[i], nums[j], nums[left], nums[right]));
+                        }
+                        left++;
+                        right--;
+                    }
                 }
             }
         }
+        return ans;
+    }
 
-        for (Map.Entry<List<Integer>, Integer> x : hm.entrySet()) {
-            List<Integer> temp = x.getKey();
-            nestedList.add(temp);
-        }
-
-        System.out.println("NestedList : " + nestedList);
+    public static void main(String[] args) {
+        int[] nums = { 2, 2, 2, 2, 2 };
+        int target = 8;
+        Arrays.sort(nums);
+        System.out.println(fourSum(nums, target));
 
     }
 }

@@ -1,6 +1,6 @@
 public class LongestPalindromicString {
 
-    /* Dynamic Programming Question */
+    /* Dynamic Programming Question OR Manacher Algorithm OR Another O(n ^ 2) Algorithm is ( Axis and Orbit ) Approach */
 
     private static boolean isPalindrome(String str) {
         String reverse = "";
