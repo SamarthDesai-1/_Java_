@@ -1,25 +1,23 @@
 public class MaxAverageSubarrayONE {
 
-    public static void main(String[] args) {
-        int[] nums = { 1, 8, 4, 2, 6, 8, 5 };
-        int k = 3;
-
-        int maxSum = 0;
+    public static double avg(int[] nums, int k) {
+        int sum = 0;
         for (int i = 0; i < k; i++)
-            maxSum += nums[i];
+            sum += nums[i];
 
-        int windowSum = maxSum;
-
-        double ans = Double.MIN_VALUE;
+        int maxSum = sum;
         for (int i = k; i < nums.length; i++) {
-            windowSum += nums[i] - nums[i - k];
-
-            double temp = (double) windowSum / (double) k;
-            ans = Math.max(ans, temp);
-            System.out.println(ans);
+            sum += nums[i] - nums[i - k];
+            maxSum = Math.max(maxSum, sum);
         }
 
-        System.out.println(ans);
+        return (double) maxSum / k;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = { 9, 7, 3, 5, 6, 2, 0, 8, 1, 9 };
+        int k = 6;
+        System.out.println(avg(nums, k));
     }
 
 }

@@ -3,6 +3,7 @@ import java.util.*;
 public class ZigZagConversion {
 
   public static String getConversion(String str, int rows) {
+    if (rows == 1) return str;
     StringBuilder sb = new StringBuilder();
 
     for (int i = 0; i < rows; i++) {
@@ -25,7 +26,6 @@ public class ZigZagConversion {
             idx += deltaNorth;
 
           goingSouth = goingSouth == true ? false : true; /* Alternate way is goingSouth = !goingSouth */
-
         }
       }
     }
@@ -43,3 +43,5 @@ public class ZigZagConversion {
   }
 
 }
+
+
