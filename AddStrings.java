@@ -14,7 +14,7 @@ public class AddStrings {
             i--;
             j--;
             int sum = ival + jval + carry;
-            ans = (sum % 10) + ans;
+            ans += (sum % 10);
             carry = sum / 10;
         }
 
@@ -31,3 +31,4 @@ public class AddStrings {
     }
 
 }
+
