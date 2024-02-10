@@ -7,9 +7,9 @@ public class LuckyNumberInMatrix {
     List<Integer> ans = new ArrayList<>();
 
     int[][] matrix = {
-        {1,10,4,2},
-        {9,3,8,2},
-        {15,16,17,12}
+        { 1, 10, 4, 2 },
+        { 9, 3, 8, 2 },
+        { 15, 16, 17, 12 }
     };
 
     /* Find minimum in each row and store in a HashSet data structure */ {
