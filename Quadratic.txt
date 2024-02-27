@@ -1,0 +1,22 @@
+Method 1: The roots of the quadratic equations can be found by the Shridharacharaya formula. 
+
+x = [-b±√(b2 – 4ac)]/2a
+
+Example: The length of sides of a rectangle is given by x – 3 and x – 5 and the area of the rectangle is 3 unit2. Find the sides of the rectangle.
+
+
+Area of rectangle = length * breadth = (x – 3)(x – 5) = 3
+
+Area = x2 – 8x + 15 = 3
+
+        = x2 – 8x + 12 = 0
+
+Discriminant = b2 – 4ac = 64 – (4(1)(12)) = 64 – 48 = 16
+
+ x = [-b ± √(b2-4ac)]/2a = [-(-8) ± √16]/2 = (8±4)/2
+
+ x = 12/2 or 4/2
+
+x = 2 or 6
+
+When x is 2, sides are x – 3 = 2 – 3 = -1 and x – 5 = 2 – 5 = -3.
